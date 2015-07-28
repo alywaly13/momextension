@@ -1,0 +1,117 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>New tab</title>
+<script src="jquery.min.js"></script>
+<script src="scripts.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://query.yahooapis.com/v1/public/yql?q=select wind from weather.forecast where woeid in (select woeid from geo.places(1) where text='boston, ma')&format=json&callback=weatherFunction"></script>
+<style>
+#maintext {
+    font-size: 325%;
+    font-family: Tahoma, "Geneva", "KaiTi", sans-serif;
+    color:white;
+    text-align: center;
+    position: absolute;
+    bottom: 4%;
+    margin-right: 13%;
+    margin-left: 13%;
+    line-height: 100%;
+    overflow: hidden;
+
+}
+#mythoughts {
+	font-size: 200%;
+    font-family: Tahoma, "Geneva", "KaiTi", sans-serif;
+	color:white;
+	text-align: center;
+	position: absolute;
+    bottom: 22%;
+    margin-right: 13%;
+    margin-left: 13%;
+    background-color: rgba(106, 117, 128, 0.4);
+
+/*    left:10%;
+    right:60%;
+    top:25%;
+    line-height: 100%;*/
+}
+
+#settingsimage{
+    margin-top:1%;
+    margin-left:1%;
+    width: 3%;
+    height: 5%;
+}
+
+#settingsdd{
+    position: relative;
+    left: 1%;
+    bottom:2%;
+    list-style:none;
+    background-color:rgba(106, 117, 128, 0.5);
+    color: white;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    font-family: Tahoma, "Geneva", "KaiTi", sans-serif;
+    font-size: 150%;
+    width: 10%;
+    border-bottom:1px solid;
+    border-color:#333;
+}
+
+#settingsdd li{
+    padding: 1%;
+    border-bottom:1px solid;
+    border-color:#333;
+}
+
+#songplayer{
+    position: absolute;
+    left: 2%;
+    bottom:2%;
+    font-family: Tahoma, "Geneva", "KaiTi", sans-serif;
+    font-size: 150%;
+    color: white;
+}
+
+.weather{
+    font-size: 120%;
+        text-align: center;
+    color:white;
+    background-color: rgba(106, 117, 128, 0.5);
+    padding:1%;
+   position: absolute;
+    bottom:40%;
+}
+#weather1{
+    right: 50%;
+}
+#weather2{
+    left: 50%;
+}
+
+</style>
+</head>
+<body id="nameOfBody" style="background-size:100% 100%;position:relative" >
+<h1 id="maintext">
+ Hello world. This is my first web page. There's more to come. Alice
+</h1>
+<p id="mythoughts">
+	我中文想的
+</p>
+<img id="settingsimage" src="images/settings.png" alt="Settings">
+<ul id="settingsdd">
+  <li> About</li>
+  <li> Other item</li>
+  <li> Other item</li>
+</ul>
+<audio id="songplayer" autoplay="autoplay" controls="controls">
+  <source id="songsource" type="audio/mp3">
+Your browser does not support the audio element.
+</audio>
+<div id="weather1" class="weather"><b>Memphis, TN</b></br></div>
+<div id="weather2" class="weather"><b>Boston, MA</b></br></div>
+</body>
+</html>
+
